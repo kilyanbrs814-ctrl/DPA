@@ -113,7 +113,7 @@ export default function SpaceBg() {
               + 0.10 * Math.sin(t * 0.05 + st.tw * 0.7))
           : 0.6 + 0.4 * Math.sin(t * 0.04 + st.tw)
 
-        const starFade = 1 - smoothstep(0.1, 0.85, warpT)
+        const starFade = 1
         const alpha = Math.min(1, tw * (0.5 + (1 - st.z) * 0.6)) * starFade
         const { cr, cg, cb } = st
 
