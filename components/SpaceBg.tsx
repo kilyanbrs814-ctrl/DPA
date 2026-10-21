@@ -4,12 +4,15 @@ import { useEffect, useRef } from "react"
 
 export default function SpaceBg() {
   const starsRef = useRef<HTMLCanvasElement>(null)
+  const warpRef = useRef<HTMLCanvasElement>(null)
 
   useEffect(() => {
     const starsCanvas = starsRef.current
-    if (!starsCanvas) return
+    const warpCanvas = warpRef.current
+    if (!starsCanvas || !warpCanvas) return
 
     const sctx = starsCanvas.getContext("2d")!
+    const wctx = warpCanvas.getContext("2d")!
     const DPR = Math.min(window.devicePixelRatio || 1, 2)
     const STAR_COUNT = 1600
     const PARTICLE_COUNT = 60
@@ -25,11 +28,13 @@ export default function SpaceBg() {
     function resize() {
       W = window.innerWidth
       H = window.innerHeight
-      starsCanvas.width = W * DPR
-      starsCanvas.height = H * DPR
-      starsCanvas.style.width = W + "px"
-      starsCanvas.style.height = H + "px"
-      sctx.setTransform(DPR, 0, 0, DPR, 0, 0)
+      ;[starsCanvas, warpCanvas].forEach((c) => {
+        c.width = W * DPR
+        c.height = H * DPR
+        c.style.width = W + "px"
+        c.style.height = H + "px"
+        c.getContext("2d")!.setTransform(DPR, 0, 0, DPR, 0, 0)
+      })
     }
 
     function seed() {
@@ -85,6 +90,8 @@ export default function SpaceBg() {
     function frame() {
       t++
 
+      // No scroll-driven warp: stars keep their natural, independent movement.
+      const warpT = 0
       const cx = W / 2, cy = H / 2
 
       sctx.clearRect(0, 0, W, H)
@@ -106,7 +113,8 @@ export default function SpaceBg() {
               + 0.10 * Math.sin(t * 0.05 + st.tw * 0.7))
           : 0.6 + 0.4 * Math.sin(t * 0.04 + st.tw)
 
-        const alpha = Math.min(1, tw * (0.5 + (1 - st.z) * 0.6))
+        const starFade = 1 - smoothstep(0.1, 0.85, warpT)
+        const alpha = Math.min(1, tw * (0.5 + (1 - st.z) * 0.6)) * starFade
         const { cr, cg, cb } = st
 
         sctx.fillStyle = `rgba(${cr},${cg},${cb},${alpha})`
@@ -114,7 +122,7 @@ export default function SpaceBg() {
         sctx.arc(px, wy, size, 0, Math.PI * 2)
         sctx.fill()
 
-        if (st.spike) {
+        if (st.spike && starFade > 0.01) {
           const spikeLen = size * 8
           sctx.lineWidth = Math.max(0.3, size * 0.4)
           const dirs: [number, number][] = [[1, 0], [-1, 0], [0, 1], [0, -1]]
@@ -130,16 +138,39 @@ export default function SpaceBg() {
           }
         }
 
+        if (warpT > 0.01) {
+          const dx = px - cx, dy = wy - cy
+          const mag = Math.hypot(dx, dy) || 1
+          const trailLen = warpT * warpT * (72 + warpT * 30) * (1 - st.z * 0.45)
+          const baseAlpha = Math.min(1, tw * (0.5 + (1 - st.z) * 0.6))
+          const trailAlpha = warpT * baseAlpha * 0.9
+
+          if (trailLen > 0.4) {
+            const x2 = px + (dx / mag) * trailLen
+            const y2 = wy + (dy / mag) * trailLen
+            const g = sctx.createLinearGradient(px, wy, x2, y2)
+            g.addColorStop(0, `rgba(${cr},${cg},${cb},${trailAlpha})`)
+            g.addColorStop(1, `rgba(${cr},${cg},${cb},0)`)
+            sctx.strokeStyle = g
+            sctx.lineWidth = Math.max(0.4, size * 0.85)
+            sctx.beginPath()
+            sctx.moveTo(px, wy)
+            sctx.lineTo(x2, y2)
+            sctx.stroke()
+          }
+        }
       }
 
       for (const p of particles) {
         p.y -= p.v
         if (p.y < -10) { p.y = H + 10; p.x = Math.random() * W }
-        sctx.fillStyle = `rgba(167,139,250,${p.a})`
+        sctx.fillStyle = `rgba(167,139,250,${p.a * (1 - warpT * 0.5)})`
         sctx.beginPath()
         sctx.arc(p.x, p.y, p.r, 0, Math.PI * 2)
         sctx.fill()
       }
+
+      wctx.clearRect(0, 0, W, H)
 
       maybeSpawn()
       for (let i = shootings.length - 1; i >= 0; i--) {
@@ -172,6 +203,7 @@ export default function SpaceBg() {
   return (
     <div className="space-bg" aria-hidden="true">
       <canvas ref={starsRef} />
+      <canvas ref={warpRef} />
     </div>
   )
 }
