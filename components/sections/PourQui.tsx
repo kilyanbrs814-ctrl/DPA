@@ -39,7 +39,7 @@ export default function PourQui() {
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="pill-badge mb-6" style={{ display: "inline-flex" }}>
-            <span aria-hidden>🎯</span> Pour qui ?
+            <span aria-hidden>🎯</span> Nos clients
           </span>
           <h2 className="font-black tracking-tight text-white text-[clamp(2.5rem,6vw,5rem)] leading-[1.02]">
             Pour{" "}
