@@ -32,19 +32,19 @@ export default function Navbar() {
             <span className="text-sm sm:text-base font-bold tracking-tight text-white whitespace-nowrap">DigitalProjectAgency</span>
           </a>
 
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden xl:flex items-center gap-7">
             <a href="#top"      className="nav-link">Accueil</a>
             <a href="#services" className="nav-link">Nos Services</a>
             <a href="#apropos"  className="nav-link">À propos de nous</a>
             <a href="#contact"  className="nav-link">Nous contacter</a>
           </div>
 
-          <a href="#contact" className="hidden md:inline-flex">
+          <a href="#contact" className="hidden xl:inline-flex">
             <HoverButton>Démarrer un projet</HoverButton>
           </a>
 
           <button
-            className="mobile-menu md:hidden"
+            className="mobile-menu xl:hidden"
             onClick={() => setMobileOpen((o) => !o)}
             aria-label="Menu"
             aria-expanded={mobileOpen}
