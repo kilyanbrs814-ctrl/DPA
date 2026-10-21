@@ -12,13 +12,7 @@ export default function CTA() {
       style={{ background: "transparent" }}
     >
       <div className="max-w-[1000px] mx-auto px-6 relative z-10 text-center">
-        <div
-          className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full mb-9"
-          style={{
-            border: "1px solid rgba(124,58,237,.3)",
-            background: "rgba(124,58,237,.15)",
-          }}
-        >
+        <div className="pill-badge mb-9">
           <span>🚀</span>
           <span style={{ color: "#c4b5fd", fontWeight: 500 }}>Consultation gratuite</span>
         </div>

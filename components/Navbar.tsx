@@ -27,9 +27,8 @@ export default function Navbar() {
         <div
           className={`max-w-7xl mx-auto px-6 lg:px-10 h-[72px] flex items-center justify-between pb-navbar${scrolled ? " scrolled" : ""}`}
         >
-          <a href="#top" className="flex min-w-0 items-center gap-3" aria-label="DigitalProjectAgency — Accueil">
-            <Image src="/dpa-logo.png" alt="Logo DPA" width={96} height={30} className="h-auto w-20 sm:w-24 shrink-0" priority />
-            <span className="text-sm sm:text-base font-bold tracking-tight text-white whitespace-nowrap">DigitalProjectAgency</span>
+          <a href="#top" className="inline-flex shrink-0 items-center rounded-lg bg-white px-2.5 py-2" aria-label="DigitalProjectAgency — Accueil">
+            <Image src="/dpa-logo.png" alt="Logo DPA" width={96} height={30} className="h-auto w-20 sm:w-24" priority />
           </a>
 
           <div className="hidden xl:flex items-center gap-7">

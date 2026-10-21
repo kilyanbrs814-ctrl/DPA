@@ -2,12 +2,12 @@ import { HoverButton } from "@/components/ui/hover-button"
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[100svh] flex items-center justify-center py-24 overflow-hidden">
+    <section className="relative flex items-center justify-center pt-40 md:pt-44 pb-12 md:pb-16">
       <div className="relative z-10 w-full max-w-6xl mx-auto px-6 text-center">
-        <h1 className="mx-auto font-black tracking-tight leading-[0.98] text-center text-[clamp(2.5rem,8vw,8rem)]">
+        <h1 className="mx-auto font-black tracking-tight leading-[1.12] text-center text-[clamp(2rem,8vw,8rem)]">
           <span className="block text-white">Digital</span>
           <span
-            className="block"
+            className="block pb-[0.12em]"
             style={{
               background: "linear-gradient(180deg,#c4b5fd,#7c3aed)",
               WebkitBackgroundClip: "text",
