@@ -2,17 +2,9 @@ import { HoverButton } from "@/components/ui/hover-button"
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[100vh] flex items-center justify-center pt-28 pb-20 overflow-hidden">
-      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-        <span className="pill-badge mb-8" style={{ display: "inline-flex" }}>
-          <span
-            className="w-1.5 h-1.5 rounded-full bg-[#a78bfa] inline-block"
-            style={{ boxShadow: "0 0 10px #a78bfa" }}
-          />
-          Agence de Marketing Digital
-        </span>
-
-        <h1 className="font-black tracking-tight leading-[0.95] text-[clamp(3rem,9vw,8rem)]">
+    <section className="relative min-h-[100svh] flex items-center justify-center py-24 overflow-hidden">
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-6 text-center">
+        <h1 className="mx-auto font-black tracking-tight leading-[0.98] text-center text-[clamp(2.5rem,8vw,8rem)]">
           <span className="block text-white">Digital</span>
           <span
             className="block"

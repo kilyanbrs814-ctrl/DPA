@@ -17,7 +17,8 @@ const badges = [
 
 export default function Apropos() {
   return (
-    <div id="apropos" className="max-w-7xl mx-auto px-6 lg:px-10 relative mt-32 md:mt-40">
+    <section id="apropos" className="relative py-12 md:py-16">
+      <div className="max-w-7xl mx-auto px-6 lg:px-10">
       <div className="grid lg:grid-cols-2 gap-14 items-center">
         <div>
           <span className="pill-badge mb-6" style={{ display: "inline-flex" }}>
@@ -57,6 +58,7 @@ export default function Apropos() {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+    </section>
   )
 }

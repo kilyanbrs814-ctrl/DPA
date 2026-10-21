@@ -27,7 +27,7 @@ const steps = [
 
 export default function Methode() {
   return (
-    <section id="methode" className="relative py-32 md:py-40 overflow-hidden">
+    <section id="methode" className="relative py-12 md:py-16 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-10 relative">
         <div className="grid lg:grid-cols-2 gap-14 items-center">
           <div>

@@ -8,7 +8,7 @@ const differentiators = [
 export default function CTA() {
   return (
     <section
-      className="relative py-24 overflow-hidden"
+      className="relative py-12 md:py-16 overflow-hidden"
       style={{ background: "transparent" }}
     >
       <div className="max-w-[1000px] mx-auto px-6 relative z-10 text-center">

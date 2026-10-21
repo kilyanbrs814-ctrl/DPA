@@ -18,6 +18,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-padding-top: 88px;
+}
+
 html, body {
   background: var(--bg);
   color: #fff;
@@ -170,25 +174,70 @@ main, nav, footer {
   background: rgba(15,12,32,.65);
 }
 
-/* Navbar */
+/* Navigation: a single fixed header; the mobile menu stays hidden on desktop. */
 
 .navbar {
   position: fixed;
-  top: 0;
+  inset: 0 0 auto;
   width: 100%;
+  height: 72px;
   z-index: 50;
+  background: rgba(3, 3, 8, 0.88);
+  border-bottom: 1px solid rgba(167, 139, 250, 0.10);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+}
+
+.navbar.scrolled {
+  background: rgba(3, 3, 8, 0.96);
+  border-bottom-color: rgba(167, 139, 250, 0.18);
 }
 
 .nav-link {
   color: #cbd5e1;
+  transition: color 0.2s ease;
 }
 
-/* Mobile */
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: #c4b5fd;
+}
+
+.mobile-nav {
+  display: none;
+}
 
 @media (max-width: 767px) {
-  .mobile-nav {
+  .mobile-menu {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    flex: 0 0 auto;
+  }
+
+  .mobile-menu span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 2px;
+    background: white;
+  }
+
+  .mobile-nav.open {
     position: fixed;
-    inset: 0;
-    background: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    inset: 72px 0 0;
+    z-index: 49;
+    padding: 2rem 1.5rem;
+    background: rgba(3, 3, 8, 0.98);
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
   }
 }

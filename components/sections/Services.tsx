@@ -45,7 +45,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="relative py-32 md:py-40">
+    <section id="services" className="relative py-12 md:py-16">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="pill-badge mb-6" style={{ display: "inline-flex" }}>

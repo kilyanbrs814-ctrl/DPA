@@ -33,7 +33,7 @@ export default function FAQ() {
   }
 
   return (
-    <section id="faq" className="relative py-32 md:py-40 overflow-hidden">
+    <section id="faq" className="relative py-12 md:py-16 overflow-hidden">
       <div className="max-w-4xl mx-auto px-6 lg:px-10 relative">
         <div className="text-center mb-14">
           <h2 className="font-black tracking-tight text-white text-[clamp(2.5rem,6vw,5rem)] leading-[1.02]">

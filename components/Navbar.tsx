@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { HoverButton } from "@/components/ui/hover-button"
+import Image from "next/image"
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -26,9 +27,9 @@ export default function Navbar() {
         <div
           className={`max-w-7xl mx-auto px-6 lg:px-10 h-[72px] flex items-center justify-between pb-navbar${scrolled ? " scrolled" : ""}`}
         >
-          <a href="#top" className="flex items-center gap-3">
-            <span className="dpa-mono">DPA</span>
-            <span className="font-bold tracking-tight text-white">DigitalProjectAgency</span>
+          <a href="#top" className="flex min-w-0 items-center gap-3" aria-label="DigitalProjectAgency — Accueil">
+            <Image src="/dpa-logo.png" alt="Logo DPA" width={96} height={30} className="h-auto w-20 sm:w-24 shrink-0" priority />
+            <span className="text-sm sm:text-base font-bold tracking-tight text-white whitespace-nowrap">DigitalProjectAgency</span>
           </a>
 
           <div className="hidden md:flex items-center gap-8">

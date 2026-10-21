@@ -1,3 +1,5 @@
+import Image from "next/image"
+
 export default function Footer() {
   return (
     <footer
@@ -11,7 +13,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="grid md:grid-cols-3 gap-8 items-center">
           <a href="#top" className="flex items-center gap-3">
-            <span className="dpa-mono">DPA</span>
+            <Image src="/dpa-logo.png" alt="Logo DPA" width={96} height={30} className="h-auto w-24" />
             <span className="font-bold text-white">DigitalProjectAgency</span>
           </a>
           <div className="flex md:justify-center gap-6 text-sm flex-wrap">
