@@ -25,10 +25,12 @@ export default function SpaceBg() {
     let particles: { x: number; y: number; r: number; v: number; a: number }[] = []
     const shootings: { x: number; y: number; vx: number; vy: number; life: number; max: number }[] = []
 
+    const canvases: HTMLCanvasElement[] = [starsCanvas, warpCanvas]
+
     function resize() {
       W = window.innerWidth
       H = window.innerHeight
-      ;[starsCanvas, warpCanvas].forEach((c) => {
+      canvases.forEach((c) => {
         c.width = W * DPR
         c.height = H * DPR
         c.style.width = W + "px"
