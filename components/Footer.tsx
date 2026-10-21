@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { HoverButton } from "@/components/ui/hover-button"
 
 const footerLinks = [
   { href: "#top", label: "Accueil" },
@@ -58,12 +59,9 @@ export default function Footer() {
             <p className="mt-3 text-sm leading-7 text-slate-400">
               Parlons de vos idées et trouvons ensemble la bonne solution pour votre activité.
             </p>
-            <a
-              href="#contact"
-              className="mt-6 inline-flex items-center justify-center gap-3 rounded-full border border-violet-400/40 bg-violet-600/20 px-5 py-3 text-sm font-semibold text-white transition-all hover:border-violet-300 hover:bg-violet-600/30"
-            >
+            <HoverButton href="#contact" className="mt-6 px-5 py-3 text-sm">
               Démarrer un projet <span aria-hidden="true">→</span>
-            </a>
+            </HoverButton>
             <a
               href="https://wa.me/33753801415"
               target="_blank"
