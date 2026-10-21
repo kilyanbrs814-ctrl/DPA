@@ -1,0 +1,194 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --purple: #7C3AED;
+  --purple-2: #A78BFA;
+  --purple-deep: #5B21B6;
+  --bg: #030308;
+  --bg-2: #06061a;
+  --glass: rgba(15, 12, 32, 0.55);
+  --glass-strong: rgba(20, 15, 40, 0.75);
+  --line: rgba(167, 139, 250, 0.18);
+  --line-strong: rgba(167, 139, 250, 0.45);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  background: var(--bg);
+  color: #fff;
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Background canvas */
+
+.space-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.space-bg canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+main, nav, footer {
+  position: relative;
+  z-index: 5;
+}
+
+/* Glow */
+
+.glow-purple {
+  box-shadow:
+    0 0 40px rgba(124,58,237,.35),
+    0 0 1px rgba(167,139,250,.7) inset;
+}
+
+.text-purple {
+  color: var(--purple-2);
+}
+
+/* Glass */
+
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--line);
+}
+
+.glass-strong {
+  background: var(--glass-strong);
+  backdrop-filter: blur(18px);
+  border: 1px solid var(--line-strong);
+}
+
+/* Buttons */
+
+.pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .5rem 1rem;
+  border-radius: 9999px;
+  background: rgba(124,58,237,.14);
+  border: 1px solid rgba(167,139,250,.35);
+  color: #ddd6fe;
+  font-size: .85rem;
+}
+
+.pill-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .9rem 1.6rem;
+  border-radius: 9999px;
+  background: linear-gradient(180deg, #8b5cf6, #6d28d9);
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 10px 30px rgba(124,58,237,.6);
+  transition: 0.2s;
+}
+
+.pill-cta:hover {
+  transform: translateY(-2px);
+}
+
+/* Cards */
+
+.station-card {
+  border-radius: 18px;
+  padding: 1.6rem;
+  background: rgba(20,16,40,.7);
+  border: 1px solid rgba(167,139,250,.18);
+  transition: 0.3s;
+}
+
+.station-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(167,139,250,.5);
+}
+
+/* Icons */
+
+.icon-tile {
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+}
+
+/* Steps */
+
+.step-num {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-weight: bold;
+  background: linear-gradient(180deg, #8b5cf6, #6d28d9);
+}
+
+/* FAQ */
+
+.faq-item {
+  border-radius: 14px;
+  border: 1px solid rgba(167,139,250,.18);
+  background: rgba(18,14,36,.7);
+}
+
+/* Forms */
+
+.field {
+  width: 100%;
+  padding: .75rem 1rem;
+  border-radius: 10px;
+  background: rgba(8,6,20,.6);
+  border: 1px solid rgba(167,139,250,.22);
+  color: #fff;
+}
+
+/* Badges */
+
+.badge-tile {
+  display: flex;
+  gap: .5rem;
+  padding: .8rem;
+  border-radius: 12px;
+  background: rgba(15,12,32,.65);
+}
+
+/* Navbar */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 50;
+}
+
+.nav-link {
+  color: #cbd5e1;
+}
+
+/* Mobile */
+
+@media (max-width: 767px) {
+  .mobile-nav {
+    position: fixed;
+    inset: 0;
+    background: #000;
+  }
+}
