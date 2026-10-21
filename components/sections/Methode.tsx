@@ -20,7 +20,7 @@ const steps = [
   {
     num: "4",
     title: "Optimisation & suivi",
-    desc: "Nous suivons les résultats et optimisons régulièrement les actions (SEO, publicité, réseaux) avec vous.",
+    desc: "Nous suivons les résultats et optimisons régulièrement les actions (SEO, contenus, fidélisation) avec vous.",
     className: "levitate",
   },
 ]

@@ -23,8 +23,8 @@ const services = [
   {
     icon: "📱",
     iconStyle: { background: "linear-gradient(180deg,#f97316,#9a3412)", color: "#fff" },
-    title: "Gestion des réseaux sociaux",
-    desc: "Animez votre communauté, créez du contenu et développez votre image sur les réseaux.",
+    title: "Posts pour réseaux sociaux",
+    desc: "Des visuels professionnels et des publications sur mesure pour valoriser votre activité sur les réseaux sociaux.",
     className: "levitate-2",
   },
   {
@@ -35,10 +35,10 @@ const services = [
     className: "levitate",
   },
   {
-    icon: "📣",
-    iconStyle: { background: "linear-gradient(180deg,#eab308,#854d0e)", color: "#fff" },
-    title: "Publicité en ligne",
-    desc: "Campagnes Google Ads et Meta Ads optimisées pour générer plus de clients rapidement.",
+    icon: "💳",
+    iconStyle: { background: "linear-gradient(180deg,#8b5cf6,#4c1d95)", color: "#fff" },
+    title: "Carte de fidélité numérique",
+    desc: "Fidélisez vos clients grâce à une carte numérique pratique, accessible depuis leur smartphone, sans carte papier.",
     className: "levitate-3",
   },
 ]

@@ -9,15 +9,15 @@ const faqs = [
   },
   {
     q: "Faites-vous seulement des sites internet ?",
-    a: "Non. Nous proposons aussi la création de logo, l'identité de marque, le SEO, la gestion des réseaux sociaux, la publicité en ligne et la maintenance.",
+    a: "Non. Nous proposons aussi la création de logos, le SEO, la maintenance, des posts pour réseaux sociaux et des cartes de fidélité numériques.",
   },
   {
     q: "Comment se déroule votre accompagnement ?",
-    a: "En 4 étapes : analyse de vos objectifs, stratégie sur mesure, conception des supports, puis optimisation et suivi continus avec un reporting clair.",
+    a: "En 4 étapes : analyse de vos objectifs, stratégie sur mesure, conception des supports, puis optimisation et suivi avec une communication claire.",
   },
   {
     q: "Puis-je suivre l'évolution de mon site ?",
-    a: "Oui, vous recevez un reporting régulier : trafic, conversions, classement SEO, performance des campagnes. Vous gardez la main et la visibilité à chaque instant.",
+    a: "Oui, selon votre prestation, nous pouvons suivre les indicateurs utiles comme le trafic, les performances du site et la visibilité sur les moteurs de recherche.",
   },
   {
     q: "Et si je n'ai pas encore de projet concret ?",
@@ -29,13 +29,16 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   function toggle(i: number) {
-    setOpenIndex(openIndex === i ? null : i)
+    setOpenIndex((current) => (current === i ? null : i))
   }
 
   return (
-    <section id="faq" className="relative py-12 md:py-16 overflow-hidden">
-      <div className="max-w-4xl mx-auto px-6 lg:px-10 relative">
-        <div className="text-center mb-14">
+    <section id="faq" className="relative py-12 md:py-16">
+      <div className="relative mx-auto max-w-4xl px-6 lg:px-10">
+        <div className="mb-14 text-center">
+          <span className="pill-badge mb-6">
+            <span aria-hidden="true">❓</span> FAQ
+          </span>
           <h2 className="font-black tracking-tight text-white text-[clamp(2.5rem,6vw,5rem)] leading-[1.02]">
             Vos questions,{" "}
             <span className="text-purple" style={{ textShadow: "0 0 40px rgba(167,139,250,.5)" }}>
@@ -48,16 +51,42 @@ export default function FAQ() {
           </p>
         </div>
 
-        <div className="flex flex-col gap-3">
-          {faqs.map((faq, i) => (
-            <div key={i} className={`faq-item${openIndex === i ? " open" : ""}`}>
-              <button className="faq-q w-full text-left" onClick={() => toggle(i)}>
-                <span>{faq.q}</span>
-                <span className="faq-toggle">+</span>
-              </button>
-              <div className="faq-a">{faq.a}</div>
-            </div>
-          ))}
+        <div className="flex flex-col gap-4">
+          {faqs.map((faq, i) => {
+            const isOpen = openIndex === i
+            return (
+              <article key={faq.q} className={`faq-item${isOpen ? " open" : ""}`}>
+                <h3>
+                  <button
+                    id={`faq-question-${i}`}
+                    type="button"
+                    className="faq-q"
+                    aria-expanded={isOpen}
+                    aria-controls={`faq-answer-${i}`}
+                    onClick={() => toggle(i)}
+                  >
+                    <span>{faq.q}</span>
+                    <span className="faq-toggle" aria-hidden="true">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="m6 9 6 6 6-6" />
+                      </svg>
+                    </span>
+                  </button>
+                </h3>
+                <div
+                  id={`faq-answer-${i}`}
+                  className="faq-a"
+                  role="region"
+                  aria-labelledby={`faq-question-${i}`}
+                  aria-hidden={!isOpen}
+                >
+                  <div className="faq-a-inner">
+                    <p>{faq.a}</p>
+                  </div>
+                </div>
+              </article>
+            )
+          })}
         </div>
       </div>
     </section>
