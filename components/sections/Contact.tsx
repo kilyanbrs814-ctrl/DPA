@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { HoverButton } from "@/components/ui/hover-button"
 
 export default function Contact() {
   const [loading, setLoading] = useState(false)
@@ -37,23 +38,18 @@ export default function Contact() {
               contactez-nous pour recevoir une proposition personnalisée et adaptée à vos objectifs.
             </p>
 
-            <a
+            <HoverButton
               href="https://wa.me/33753801415"
-              className="mt-8 inline-flex items-center gap-3 px-5 py-3 rounded-full font-semibold"
-              style={{
-                background: "linear-gradient(180deg,#22c55e,#15803d)",
-                color: "#fff",
-                boxShadow: "0 12px 30px -10px rgba(34,197,94,.6),0 0 40px rgba(34,197,94,.25)",
-              }}
+              variant="green"
+              className="mt-8 px-6 py-3"
             >
-              <span
-                aria-hidden
-                className="w-6 h-6 rounded-full bg-white/20 grid place-items-center text-sm"
-              >
-                📱
+              <span className="inline-flex items-center gap-3">
+                <span aria-hidden="true" className="grid h-6 w-6 place-items-center rounded-full bg-green-400/20 text-sm">
+                  📱
+                </span>
+                +33 7 53 80 14 15
               </span>
-              +33 7 53 80 14 15
-            </a>
+            </HoverButton>
 
             <div className="glass mt-8 rounded-2xl p-5 max-w-md">
               <ul className="space-y-2 text-sm">
@@ -115,17 +111,17 @@ export default function Contact() {
               />
             </div>
 
-            <button
+            <HoverButton
               type="submit"
               disabled={loading || submitted}
-              className="pill-cta w-full justify-center mt-6"
+              className="mt-6 w-full"
             >
               {loading
                 ? "Envoi en cours…"
                 : submitted
                 ? "✓ Message envoyé !"
                 : "Envoyer le message →"}
-            </button>
+            </HoverButton>
 
             {submitted && (
               <p className="mt-4 text-center text-sm text-green-400 font-medium">

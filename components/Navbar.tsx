@@ -38,9 +38,7 @@ export default function Navbar() {
             <a href="#contact"  className="nav-link">Nous contacter</a>
           </div>
 
-          <a href="#contact" className="hidden xl:inline-flex">
-            <HoverButton>Démarrer un projet</HoverButton>
-          </a>
+          <HoverButton href="#contact" className="hidden xl:inline-flex">Démarrer un projet</HoverButton>
 
           <button
             className="mobile-menu xl:hidden"

@@ -1,3 +1,5 @@
+import { HoverButton } from "@/components/ui/hover-button"
+
 const differentiators = [
   "Processus structuré",
   "Suivi régulier",
@@ -43,34 +45,8 @@ export default function CTA() {
           <strong className="text-white">personnalisé</strong> pour développer votre présence en ligne.
         </p>
 
-        <div className="flex flex-wrap justify-center gap-4 cta-buttons">
-          <a
-            href="#contact"
-            className="btn-shine"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 10,
-              padding: "18px 42px",
-              background: "white",
-              color: "#111827",
-              borderRadius: 999,
-              fontSize: 18,
-              fontWeight: 600,
-              textDecoration: "none",
-              boxShadow: "0 20px 40px rgba(255,255,255,.15)",
-            }}
-          >
-            Planifier un appel 📞
-          </a>
-
-          <a
-            href="#contact"
-            className="glass-btn no-shine"
-            style={{ padding: "18px 42px", fontSize: 18, fontWeight: 500 }}
-          >
-            Voir nos tarifs
-          </a>
+        <div className="flex justify-center">
+          <HoverButton href="#contact">Planifier un appel 📞</HoverButton>
         </div>
 
         <div

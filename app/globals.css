@@ -103,14 +103,17 @@ main, nav, footer {
   padding: .9rem 1.6rem;
   border-radius: 9999px;
   background: linear-gradient(180deg, #8b5cf6, #6d28d9);
+  border: 1.5px solid rgba(196,181,253,.92);
   color: white;
   font-weight: 600;
-  box-shadow: 0 10px 30px rgba(124,58,237,.6);
-  transition: 0.2s;
+  box-shadow: 0 8px 28px rgba(124,58,237,.42), 0 0 0 1px rgba(167,139,250,.16) inset;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
 }
 
 .pill-cta:hover {
   transform: translateY(-2px);
+  border-color: #ddd6fe;
+  box-shadow: 0 10px 36px rgba(124,58,237,.65), 0 0 0 1px rgba(221,214,254,.3) inset;
 }
 
 /* Cards */

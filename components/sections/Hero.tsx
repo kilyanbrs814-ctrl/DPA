@@ -25,9 +25,7 @@ export default function Hero() {
         </p>
 
         <div className="mt-10 flex flex-col items-center gap-3">
-          <a href="#contact">
-            <HoverButton>Démarrer un projet</HoverButton>
-          </a>
+          <HoverButton href="#contact">Démarrer un projet</HoverButton>
           <p className="text-xs text-slate-400">Sans engagement – Réponse sous 24h</p>
         </div>
       </div>
