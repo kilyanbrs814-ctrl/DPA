@@ -1,3 +1,5 @@
+import Image from "next/image"
+
 const steps = [
   {
     num: "1",
@@ -47,10 +49,14 @@ export default function Methode() {
               activité sereinement.
             </p>
           </div>
-          <div className="relative">
-            <div className="img-placeholder rounded-2xl aspect-[16/11] glow-purple">
-              [ photo équipe · réunion / atelier ]
-            </div>
+          <div className="relative aspect-[16/11] overflow-hidden rounded-2xl border border-violet-400/20 glow-purple">
+            <Image
+              src="https://cdn.shopify.com/s/files/1/1058/4378/6073/files/dpa-agence-methode.webp?v=1792608678"
+              alt="Équipe créative travaillant sur une stratégie digitale, autour de maquettes et d’un écran de présentation."
+              fill
+              sizes="(min-width: 1024px) 48vw, 100vw"
+              className="object-cover"
+            />
           </div>
         </div>
 

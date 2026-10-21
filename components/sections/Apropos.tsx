@@ -1,3 +1,5 @@
+import Image from "next/image"
+
 const points = [
   "Support client disponible 7j/7",
   "Offre modulable et personnalisable",
@@ -45,8 +47,14 @@ export default function Apropos() {
         </div>
 
         <div>
-          <div className="img-placeholder rounded-2xl aspect-[16/11] glow-purple">
-            [ photo équipe · espace de travail / collaboration ]
+          <div className="relative aspect-[16/11] overflow-hidden rounded-2xl border border-violet-400/20 glow-purple">
+            <Image
+              src="https://cdn.shopify.com/s/files/1/1058/4378/6073/files/dpa-agence-a-propos.webp?v=1792608685"
+              alt="Équipe de création digitale collaborant autour d’un ordinateur dans un espace de travail moderne."
+              fill
+              sizes="(min-width: 1024px) 48vw, 100vw"
+              className="object-cover"
+            />
           </div>
           <div className="grid grid-cols-3 gap-3 mt-4">
             {badges.map((b) => (
