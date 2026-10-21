@@ -191,7 +191,7 @@ const HoverButton = React.forwardRef<HTMLButtonElement, HoverButtonProps>(
       "cursor-pointer select-none disabled:cursor-not-allowed disabled:opacity-60",
       "focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[#030308]",
       isGreen ? "focus-visible:ring-green-300" : "focus-visible:ring-violet-300",
-      className
+      className ?? ""
     )
 
     const buttonStyle: React.CSSProperties = {
