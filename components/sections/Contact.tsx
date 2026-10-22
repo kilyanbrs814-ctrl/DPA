@@ -6,15 +6,39 @@ import { HoverButton } from "@/components/ui/hover-button"
 export default function Contact() {
   const [loading, setLoading] = useState(false)
   const [submitted, setSubmitted] = useState(false)
+  const [error, setError] = useState("")
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault()
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+    if (loading) return
+
+    const form = event.currentTarget
+    const data = new FormData(form)
     setLoading(true)
-    setTimeout(() => {
-      setLoading(false)
+    setError("")
+    setSubmitted(false)
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: data.get("name"),
+          email: data.get("email"),
+          company: data.get("company"),
+          message: data.get("message"),
+          website: data.get("website"),
+        }),
+      })
+      const result = await response.json().catch(() => ({}))
+      if (!response.ok) throw new Error(result.error || "L'envoi a échoué.")
       setSubmitted(true)
-      ;(e.target as HTMLFormElement).reset()
-    }, 800)
+      form.reset()
+    } catch (reason) {
+      setError(reason instanceof Error ? reason.message : "L'envoi a échoué. Réessayez.")
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -74,6 +98,10 @@ export default function Contact() {
             className="glass-strong mobile-contact-form rounded-2xl p-5 sm:p-7 md:p-8 glow-purple"
             onSubmit={handleSubmit}
           >
+            <div className="absolute -left-[9999px] h-0 overflow-hidden" aria-hidden="true">
+              <label htmlFor="f-website">Site</label>
+              <input id="f-website" name="website" tabIndex={-1} autoComplete="off" />
+            </div>
             <h3 className="text-[22px] leading-tight sm:text-2xl font-bold" style={{ color: "#B877DA" }}>
               Envoyez-nous un message
             </h3>
@@ -128,11 +156,18 @@ export default function Contact() {
                 : "Envoyer le message →"}
             </HoverButton>
 
-            {submitted && (
-              <p className="mt-4 text-center text-sm text-green-400 font-medium">
-                ✓ Merci ! Nous vous répondons sous 24h.
-              </p>
-            )}
+            <div role="status" aria-live="polite">
+              {submitted && (
+                <p className="mt-4 text-center text-sm text-green-400 font-medium">
+                  ✓ Message envoyé ! Nous vous répondrons dès que possible.
+                </p>
+              )}
+              {error && (
+                <p className="mt-4 text-center text-sm font-medium text-red-300">
+                  {error}
+                </p>
+              )}
+            </div>
           </form>
         </div>
       </div>
