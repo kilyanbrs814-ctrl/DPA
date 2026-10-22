@@ -21,10 +21,10 @@ export default function Footer() {
           <div>
             <a
               href="#top"
-              className="inline-flex items-center rounded-lg bg-white px-2.5 py-2"
+              className="inline-flex items-center"
               aria-label="Retour à l'accueil"
             >
-              <Image src="/dpa-logo.png" alt="Logo DPA" width={96} height={30} className="h-auto w-24" />
+              <Image src="/dpa-logo-white-purple.svg" alt="Logo DPA blanc avec accent violet" width={386} height={119} className="h-auto w-[124px] sm:w-[140px]" />
             </a>
             <p className="mt-6 max-w-sm text-sm leading-7 text-slate-400">
               Création de sites, identité visuelle et solutions digitales pour

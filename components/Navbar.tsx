@@ -50,8 +50,8 @@ export default function Navbar() {
     <>
       <nav className={`navbar${scrolled ? " scrolled" : ""}`} aria-label="Navigation principale">
         <div className="mx-auto flex h-[68px] max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 md:h-[72px] lg:px-10">
-          <a href="#top" onClick={closeMobile} className="flex shrink-0 items-center rounded-[10px] bg-white px-2.5 py-2 shadow-sm" aria-label="DigitalProjectAgency — Accueil">
-            <Image src="/dpa-logo.png" alt="Logo DPA" width={96} height={30} className="h-auto w-[82px] sm:w-24" priority />
+          <a href="#top" onClick={closeMobile} className="flex shrink-0 items-center" aria-label="DigitalProjectAgency — Accueil">
+            <Image src="/dpa-logo-white-purple.svg" alt="Logo DPA blanc avec accent violet" width={386} height={119} className="h-auto w-[110px] sm:w-[124px]" priority />
           </a>
 
           <div className="hidden items-center gap-7 xl:flex">
