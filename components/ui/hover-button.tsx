@@ -305,6 +305,7 @@ const HoverButton = React.forwardRef<HTMLButtonElement, HoverButtonProps>(
         onMouseEnter={handleEnter}
         onMouseLeave={handleLeave}
         onMouseMove={handleMouseMove}
+        onTouchStart={handleTouchStart}
       >
         {contents}
       </button>
