@@ -13,15 +13,15 @@ export default function CTA() {
       className="relative py-12 md:py-16 overflow-hidden"
       style={{ background: "transparent" }}
     >
-      <div className="max-w-[1000px] mx-auto px-6 relative z-10 text-center">
-        <div className="pill-badge mb-9">
+      <div className="max-w-[1000px] mx-auto px-5 sm:px-6 relative z-10 text-center mobile-cta-section">
+        <div className="pill-badge mb-6 md:mb-9">
           <span>🚀</span>
           <span style={{ color: "#B877DA", fontWeight: 500 }}>Consultation gratuite</span>
         </div>
 
         <h2
-          className="font-extrabold text-white mb-8"
-          style={{ fontSize: "clamp(42px,6vw,72px)", lineHeight: 1.1 }}
+          className="font-extrabold text-white mb-6 md:mb-8 mobile-cta-title"
+          style={{ lineHeight: 1.1 }}
         >
           Prêt à dominer
           <br />
@@ -38,25 +38,25 @@ export default function CTA() {
         </h2>
 
         <p
-          className="text-gray-400 max-w-[720px] mx-auto mb-12"
-          style={{ fontSize: "clamp(18px,2.5vw,24px)" }}
+          className="text-gray-300 max-w-[720px] mx-auto mb-8 md:mb-12 mobile-cta-description"
+          
         >
           Un accompagnement clair et{" "}
           <strong className="text-white">personnalisé</strong> pour développer votre présence en ligne.
         </p>
 
-        <div className="flex justify-center">
+        <div className="flex justify-center mobile-cta-action">
           <HoverButton href="#contact">Planifier un appel 📞</HoverButton>
         </div>
 
         <div
-          className="mt-20 pt-12"
+          className="mt-12 pt-8 md:mt-20 md:pt-12"
           style={{ borderTop: "1px solid #1f2937" }}
         >
           <p className="text-gray-400 text-lg mb-6 font-medium">Ce qui fait la différence :</p>
-          <div className="flex flex-wrap justify-center gap-8" style={{ opacity: 0.75 }}>
+          <div className="mobile-differentiators grid grid-cols-2 gap-x-3 gap-y-4 text-left sm:flex sm:flex-wrap sm:justify-center sm:gap-8" style={{ opacity: 0.75 }}>
             {differentiators.map((d) => (
-              <span key={d} className="text-white font-bold">
+              <span key={d} className="flex items-center gap-2 text-white text-xs font-semibold sm:text-base sm:font-bold"><span aria-hidden="true" className="text-brand-light">✓</span>
                 {d}
               </span>
             ))}

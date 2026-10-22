@@ -34,12 +34,12 @@ export default function FAQ() {
 
   return (
     <section id="faq" className="relative py-12 md:py-16">
-      <div className="relative mx-auto max-w-4xl px-6 lg:px-10">
-        <div className="mb-14 text-center">
+      <div className="relative mx-auto max-w-4xl px-5 sm:px-6 lg:px-10">
+        <div className="mb-9 text-center md:mb-14">
           <span className="pill-badge mb-6">
             <span aria-hidden="true">❓</span> FAQ
           </span>
-          <h2 className="font-black tracking-tight text-white text-[clamp(2.5rem,6vw,5rem)] leading-[1.02]">
+          <h2 className="font-black tracking-tight text-white text-[clamp(2.05rem,9vw,3.15rem)] leading-[1.12] md:text-[clamp(2.5rem,6vw,5rem)] md:leading-[1.05]">
             Vos questions,{" "}
             <span className="text-purple" style={{ textShadow: "0 0 40px rgba(121,54,163,.66)" }}>
               nos réponses

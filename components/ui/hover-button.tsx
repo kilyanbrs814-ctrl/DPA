@@ -81,6 +81,7 @@ const HoverButton = React.forwardRef<HTMLButtonElement, HoverButtonProps>(
       onMouseEnter,
       onMouseLeave,
       onMouseMove,
+      onTouchStart,
       style,
       href,
       target,
@@ -164,6 +165,19 @@ const HoverButton = React.forwardRef<HTMLButtonElement, HoverButtonProps>(
         if (!href) onMouseMove?.(e as React.MouseEvent<HTMLButtonElement>)
       },
       [href, spawnParticle, onMouseMove]
+    )
+
+    const handleTouchStart = React.useCallback(
+      (e: React.TouchEvent<HTMLElement>) => {
+        const point = e.touches[0]
+        if (elementRef.current && point) {
+          const rect = elementRef.current.getBoundingClientRect()
+          spawnParticle(point.clientX - rect.left, point.clientY - rect.top)
+          startLoop()
+        }
+        if (!href) onTouchStart?.(e as React.TouchEvent<HTMLButtonElement>)
+      },
+      [href, onTouchStart, spawnParticle, startLoop]
     )
 
     const mergeRef = React.useCallback(
@@ -274,6 +288,7 @@ const HoverButton = React.forwardRef<HTMLButtonElement, HoverButtonProps>(
           onMouseEnter={handleEnter}
           onMouseLeave={handleLeave}
           onMouseMove={handleMouseMove}
+          onTouchStart={handleTouchStart}
         >
           {contents}
         </a>

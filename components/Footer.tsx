@@ -16,8 +16,8 @@ export default function Footer() {
         aria-hidden="true"
         className="pointer-events-none absolute -top-48 left-1/2 h-72 w-[640px] max-w-full -translate-x-1/2 rounded-full bg-brand/10 blur-3xl"
       />
-      <div className="relative mx-auto max-w-7xl px-6 pt-14 pb-8 lg:px-10 md:pt-20">
-        <div className="grid gap-12 md:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)_minmax(0,1.2fr)] md:gap-10 lg:gap-20">
+      <div className="relative mx-auto max-w-7xl px-5 pt-12 pb-8 sm:px-6 lg:px-10 md:pt-20">
+        <div className="grid gap-10 md:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)_minmax(0,1.2fr)] md:gap-10 lg:gap-20">
           <div>
             <a
               href="#top"
@@ -42,10 +42,10 @@ export default function Footer() {
 
           <div>
             <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-brand-light">Navigation</h2>
-            <ul className="mt-6 space-y-3.5">
+            <ul className="mobile-footer-links mt-5 grid grid-cols-2 gap-x-3 gap-y-2 md:mt-6 md:block md:space-y-3.5">
               {footerLinks.map(({ href, label }) => (
                 <li key={href}>
-                  <a href={href} className="inline-block text-sm text-slate-300 transition-colors hover:text-white focus-visible:text-white">
+                  <a href={href} className="inline-flex min-h-11 items-center text-sm text-slate-300 transition-colors hover:text-white focus-visible:text-white">
                     {label}
                   </a>
                 </li>
@@ -59,7 +59,7 @@ export default function Footer() {
             <p className="mt-3 text-sm leading-7 text-slate-400">
               Parlons de vos idées et trouvons ensemble la bonne solution pour votre activité.
             </p>
-            <HoverButton href="#contact" className="mt-6 px-5 py-3 text-sm">
+            <HoverButton href="#contact" className="mt-6 w-full px-5 py-3 text-sm sm:w-auto">
               Démarrer un projet <span aria-hidden="true">→</span>
             </HoverButton>
             <a
@@ -73,7 +73,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col gap-3 border-t border-white/10 pt-7 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-11 flex flex-col gap-3 border-t border-white/10 pt-6 text-center text-xs text-slate-500 sm:mt-14 sm:flex-row sm:items-center sm:justify-between sm:text-left">
           <p>© 2026 DigitalProjectAgency. Tous droits réservés.</p>
           <p>Des idées aux projets qui prennent vie.</p>
         </div>

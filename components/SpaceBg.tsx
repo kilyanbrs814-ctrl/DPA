@@ -13,9 +13,11 @@ export default function SpaceBg() {
 
     const sctx = starsCanvas.getContext("2d")!
     const wctx = warpCanvas.getContext("2d")!
-    const DPR = Math.min(window.devicePixelRatio || 1, 2)
-    const STAR_COUNT = 1600
-    const PARTICLE_COUNT = 60
+    // Preserve the full desktop starfield, use fewer particles on narrow phones.
+    const compact = window.innerWidth < 640
+    const DPR = Math.min(window.devicePixelRatio || 1, compact ? 1.5 : 2)
+    const STAR_COUNT = compact ? 500 : 1600
+    const PARTICLE_COUNT = compact ? 24 : 60
 
     let W = 0, H = 0
     let stars: {

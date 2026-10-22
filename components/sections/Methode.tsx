@@ -31,12 +31,12 @@ export default function Methode() {
   return (
     <section id="methode" className="relative py-12 md:py-16 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-10 relative">
-        <div className="grid lg:grid-cols-2 gap-14 items-center">
+        <div className="grid gap-7 md:gap-10 lg:grid-cols-2 lg:gap-14 items-center">
           <div>
             <span className="pill-badge mb-6" style={{ display: "inline-flex" }}>
               <span aria-hidden>🚀</span> Méthode
             </span>
-            <h2 className="font-black tracking-tight text-white text-[clamp(2.25rem,4.5vw,4rem)] leading-[1.05]">
+            <h2 className="font-black tracking-tight text-white text-[clamp(2.05rem,8.4vw,3rem)] leading-[1.15] md:text-[clamp(2.25rem,4.5vw,4rem)] md:leading-[1.05]">
               Une façon de travailler{" "}
               <span className="text-purple">claire,</span>
               <br />
@@ -60,14 +60,16 @@ export default function Methode() {
           </div>
         </div>
 
-        <div className="relative mt-20">
+        <div className="relative mt-11 md:mt-20">
           <div className="step-line hidden lg:block" />
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 relative">
+          <div className="mobile-steps relative grid gap-4 md:grid-cols-2 md:gap-5 lg:grid-cols-4">
             {steps.map((step) => (
-              <article key={step.num} className={`station-card ${step.className}`}>
+              <article key={step.num} className={`station-card mobile-step-card ${step.className}`}>
                 <div className="step-num mb-5">{step.num}</div>
-                <h3 className="text-white font-bold">{step.title}</h3>
-                <p className="mt-3 text-slate-300/85 text-sm leading-relaxed">{step.desc}</p>
+                <div className="mobile-step-content">
+                  <h3 className="text-white font-bold">{step.title}</h3>
+                  <p className="mt-3 text-slate-300/85 text-sm leading-relaxed">{step.desc}</p>
+                </div>
               </article>
             ))}
           </div>

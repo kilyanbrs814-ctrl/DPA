@@ -21,12 +21,12 @@ export default function Apropos() {
   return (
     <section id="apropos" className="relative py-12 md:py-16">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
-        <div className="grid lg:grid-cols-2 gap-14 items-center">
+        <div className="grid gap-8 lg:grid-cols-2 lg:gap-14 items-center">
         <div>
           <span className="pill-badge mb-6" style={{ display: "inline-flex" }}>
             <span aria-hidden>👥</span> À propos
           </span>
-          <h2 className="font-black tracking-tight text-white text-[clamp(2.25rem,4.5vw,4rem)] leading-[1.05]">
+          <h2 className="font-black tracking-tight text-white text-[clamp(2.05rem,8.4vw,3rem)] leading-[1.15] md:text-[clamp(2.25rem,4.5vw,4rem)] md:leading-[1.05]">
             Votre partenaire digital de{" "}
             <span className="text-purple">confiance</span>
           </h2>
@@ -36,7 +36,7 @@ export default function Apropos() {
             trouvent facilement.
           </p>
 
-          <ul className="mt-8 grid sm:grid-cols-2 gap-x-8 gap-y-3.5 text-sm">
+          <ul className="mobile-checks mt-7 grid sm:grid-cols-2 gap-x-8 gap-y-3.5 text-sm">
             {points.map((point) => (
               <li key={point} className="flex items-start gap-3">
                 <span className="check">✓</span>
@@ -58,7 +58,7 @@ export default function Apropos() {
           </div>
           <div className="grid grid-cols-3 gap-3 mt-4">
             {badges.map((b) => (
-              <div key={b.label} className="badge-tile">
+              <div key={b.label} className="badge-tile mobile-badge-tile">
                 <span className="ico">{b.ico}</span>
                 <span>{b.label}</span>
               </div>

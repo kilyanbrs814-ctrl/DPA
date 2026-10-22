@@ -20,14 +20,14 @@ export default function Contact() {
   return (
     <section id="contact" className="relative py-12 md:py-16">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
-        <div className="grid lg:grid-cols-2 gap-14 items-start">
+        <div className="grid gap-8 lg:grid-cols-2 lg:gap-14 items-start">
 
           {/* Left column */}
           <div>
             <span className="pill-badge mb-6" style={{ display: "inline-flex" }}>
               <span aria-hidden>💬</span> Contact
             </span>
-            <h2 className="font-black tracking-tight text-white text-[clamp(2.5rem,6vw,5rem)] leading-[1.02]">
+            <h2 className="font-black tracking-tight text-white text-[clamp(2.05rem,9vw,3.15rem)] leading-[1.12] md:text-[clamp(2.5rem,6vw,5rem)] md:leading-[1.05]">
               Démarrons votre{" "}
               <span className="text-purple" style={{ textShadow: "0 0 40px rgba(121,54,163,.66)" }}>
                 projet
@@ -41,7 +41,7 @@ export default function Contact() {
             <HoverButton
               href="https://wa.me/33753801415"
               variant="green"
-              className="mt-8 px-6 py-3"
+              className="mt-7 w-full justify-center px-5 py-3.5 sm:w-auto"
             >
               <span className="inline-flex items-center gap-3">
                 <span aria-hidden="true" className="grid h-6 w-6 place-items-center rounded-full bg-green-400/20 text-sm">
@@ -51,7 +51,7 @@ export default function Contact() {
               </span>
             </HoverButton>
 
-            <div className="glass mt-8 rounded-2xl p-5 max-w-md">
+            <div className="glass mt-5 rounded-2xl p-5 max-w-md sm:mt-8">
               <ul className="space-y-2 text-sm">
                 <li className="flex items-center gap-3">
                   <span>⚡</span>
@@ -71,10 +71,10 @@ export default function Contact() {
 
           {/* Form */}
           <form
-            className="glass-strong rounded-2xl p-7 md:p-8 glow-purple"
+            className="glass-strong mobile-contact-form rounded-2xl p-5 sm:p-7 md:p-8 glow-purple"
             onSubmit={handleSubmit}
           >
-            <h3 className="text-2xl font-bold" style={{ color: "#B877DA" }}>
+            <h3 className="text-[22px] leading-tight sm:text-2xl font-bold" style={{ color: "#B877DA" }}>
               Envoyez-nous un message
             </h3>
             <p className="text-slate-400 text-sm mt-1">Réponse sous 24h.</p>
@@ -82,7 +82,7 @@ export default function Contact() {
             <div className="grid sm:grid-cols-2 gap-4 mt-6">
               <div>
                 <label className="field-label" htmlFor="f-name">Nom complet</label>
-                <input id="f-name" className="field" placeholder="John Doe" required />
+                <input id="f-name" className="field" name="name" autoComplete="name" placeholder="Votre nom" required />
               </div>
               <div>
                 <label className="field-label" htmlFor="f-mail">Email</label>
@@ -90,6 +90,9 @@ export default function Contact() {
                   id="f-mail"
                   type="email"
                   className="field"
+                  name="email"
+                  autoComplete="email"
+                  inputMode="email"
                   placeholder="email@exemple.com"
                   required
                 />
@@ -98,7 +101,7 @@ export default function Contact() {
 
             <div className="mt-4">
               <label className="field-label" htmlFor="f-co">Entreprise</label>
-              <input id="f-co" className="field" placeholder="Nom de l'entreprise" />
+              <input id="f-co" className="field" name="company" autoComplete="organization" placeholder="Nom de l'entreprise" />
             </div>
 
             <div className="mt-4">
@@ -106,6 +109,8 @@ export default function Contact() {
               <textarea
                 id="f-msg"
                 className="field"
+                name="message"
+                rows={4}
                 placeholder="Décrivez votre projet…"
                 required
               />
