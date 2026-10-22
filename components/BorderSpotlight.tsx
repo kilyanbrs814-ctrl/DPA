@@ -66,16 +66,16 @@ export default function BorderSpotlight() {
         const t = 1 - dist / RADIUS
 
         const grd = ctx.createRadialGradient(mx, my, 0, mx, my, RADIUS)
-        grd.addColorStop(0,    `rgba(216,180,254,${+(0.95 * t).toFixed(3)})`)
-        grd.addColorStop(0.3,  `rgba(167,139,250,${+(0.80 * t).toFixed(3)})`)
-        grd.addColorStop(0.65, `rgba(124,58,237,${+(0.40 * t).toFixed(3)})`)
-        grd.addColorStop(1,    "rgba(124,58,237,0)")
+        grd.addColorStop(0,    `rgba(205,158,230,${+(0.95 * t).toFixed(3)})`)
+        grd.addColorStop(0.3,  `rgba(184,119,218,${+(0.80 * t).toFixed(3)})`)
+        grd.addColorStop(0.65, `rgba(121,54,163,${+(0.40 * t).toFixed(3)})`)
+        grd.addColorStop(1,    "rgba(121,54,163,0)")
 
         ctx.beginPath()
         addRoundRect(r.left, r.top, r.width, r.height, CARD_R)
 
         ctx.save()
-        ctx.shadowColor = `rgba(167,139,250,${+(0.55 * t).toFixed(3)})`
+        ctx.shadowColor = `rgba(184,119,218,${+(0.55 * t).toFixed(3)})`
         ctx.shadowBlur = 16
         ctx.strokeStyle = grd
         ctx.lineWidth = 2.5

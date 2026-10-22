@@ -49,7 +49,7 @@ export default function Methode() {
               activité sereinement.
             </p>
           </div>
-          <div className="relative aspect-[16/11] overflow-hidden rounded-2xl border border-violet-400/20 glow-purple">
+          <div className="relative aspect-[16/11] overflow-hidden rounded-2xl border border-brand/40 glow-purple">
             <Image
               src="https://cdn.shopify.com/s/files/1/1058/4378/6073/files/dpa-agence-methode.webp?v=1792608678"
               alt="Équipe créative travaillant sur une stratégie digitale, autour de maquettes et d’un écran de présentation."

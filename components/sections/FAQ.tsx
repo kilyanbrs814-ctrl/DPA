@@ -41,7 +41,7 @@ export default function FAQ() {
           </span>
           <h2 className="font-black tracking-tight text-white text-[clamp(2.5rem,6vw,5rem)] leading-[1.02]">
             Vos questions,{" "}
-            <span className="text-purple" style={{ textShadow: "0 0 40px rgba(167,139,250,.5)" }}>
+            <span className="text-purple" style={{ textShadow: "0 0 40px rgba(121,54,163,.66)" }}>
               nos réponses
             </span>
           </h2>

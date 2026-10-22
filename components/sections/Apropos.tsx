@@ -47,7 +47,7 @@ export default function Apropos() {
         </div>
 
         <div>
-          <div className="relative aspect-[16/11] overflow-hidden rounded-2xl border border-violet-400/20 glow-purple">
+          <div className="relative aspect-[16/11] overflow-hidden rounded-2xl border border-brand/40 glow-purple">
             <Image
               src="https://cdn.shopify.com/s/files/1/1058/4378/6073/files/dpa-agence-a-propos.webp?v=1792608685"
               alt="Équipe de création digitale collaborant autour d’un ordinateur dans un espace de travail moderne."

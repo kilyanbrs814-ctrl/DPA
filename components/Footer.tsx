@@ -11,10 +11,10 @@ const footerLinks = [
 
 export default function Footer() {
   return (
-    <footer className="relative z-10 mt-14 overflow-hidden border-t border-violet-400/20 bg-[#080713]">
+    <footer className="relative z-10 mt-14 overflow-hidden border-t border-brand/40 bg-[#080713]">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -top-48 left-1/2 h-72 w-[640px] max-w-full -translate-x-1/2 rounded-full bg-violet-800/10 blur-3xl"
+        className="pointer-events-none absolute -top-48 left-1/2 h-72 w-[640px] max-w-full -translate-x-1/2 rounded-full bg-brand/10 blur-3xl"
       />
       <div className="relative mx-auto max-w-7xl px-6 pt-14 pb-8 lg:px-10 md:pt-20">
         <div className="grid gap-12 md:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)_minmax(0,1.2fr)] md:gap-10 lg:gap-20">
@@ -31,17 +31,17 @@ export default function Footer() {
               renforcer votre visibilité et fidéliser vos clients.
             </p>
             <div className="mt-5 flex flex-wrap gap-2">
-              <span className="rounded-full border border-violet-400/20 bg-violet-500/10 px-3 py-1.5 text-xs text-violet-200">
+              <span className="rounded-full border border-brand/40 bg-brand/20 px-3 py-1.5 text-xs text-brand-soft">
                 Création digitale
               </span>
-              <span className="rounded-full border border-violet-400/20 bg-violet-500/10 px-3 py-1.5 text-xs text-violet-200">
+              <span className="rounded-full border border-brand/40 bg-brand/20 px-3 py-1.5 text-xs text-brand-soft">
                 Visibilité en ligne
               </span>
             </div>
           </div>
 
           <div>
-            <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-violet-300">Navigation</h2>
+            <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-brand-light">Navigation</h2>
             <ul className="mt-6 space-y-3.5">
               {footerLinks.map(({ href, label }) => (
                 <li key={href}>
@@ -54,7 +54,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-violet-300">Contact</h2>
+            <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-brand-light">Contact</h2>
             <h3 className="mt-6 text-xl font-bold text-white">Un projet en tête ?</h3>
             <p className="mt-3 text-sm leading-7 text-slate-400">
               Parlons de vos idées et trouvons ensemble la bonne solution pour votre activité.
@@ -66,7 +66,7 @@ export default function Footer() {
               href="https://wa.me/33753801415"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-5 block w-fit text-sm text-slate-300 underline decoration-violet-500/50 underline-offset-4 transition-colors hover:text-violet-200"
+              className="mt-5 block w-fit text-sm text-slate-300 underline decoration-brand/70 underline-offset-4 transition-colors hover:text-brand-soft"
             >
               Échanger sur WhatsApp
             </a>

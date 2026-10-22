@@ -1,42 +1,42 @@
 const services = [
   {
     icon: "🎨",
-    iconStyle: { background: "linear-gradient(180deg,#ec4899,#9d174d)", color: "#fff" },
+    iconStyle: { background: "linear-gradient(180deg,#7936A3,#52236F)", color: "#fff" },
     title: "Création de logo",
     desc: "Un logo simple, moderne et adapté à votre activité, utilisable sur tous vos supports.",
     className: "levitate",
   },
   {
     icon: "💻",
-    iconStyle: { background: "linear-gradient(180deg,#3b82f6,#1d4ed8)", color: "#fff" },
+    iconStyle: { background: "linear-gradient(180deg,#7936A3,#52236F)", color: "#fff" },
     title: "Création de site internet",
     desc: "Nous créons des sites internet modernes, rapides et adaptés à tous les écrans. Chaque site est conçu pour offrir une navigation claire et faciliter la prise de contact.",
     className: "levitate-2",
   },
   {
     icon: "🔧",
-    iconStyle: { background: "linear-gradient(180deg,#10b981,#065f46)", color: "#fff" },
+    iconStyle: { background: "linear-gradient(180deg,#7936A3,#52236F)", color: "#fff" },
     title: "Maintenance du site",
     desc: "Sécurité, mises à jour et performance pour un site fiable et toujours disponible.",
     className: "levitate-3",
   },
   {
     icon: "📱",
-    iconStyle: { background: "linear-gradient(180deg,#f97316,#9a3412)", color: "#fff" },
+    iconStyle: { background: "linear-gradient(180deg,#7936A3,#52236F)", color: "#fff" },
     title: "Posts pour réseaux sociaux",
     desc: "Des visuels professionnels et des publications sur mesure pour valoriser votre activité sur les réseaux sociaux.",
     className: "levitate-2",
   },
   {
     icon: "🔍",
-    iconStyle: { background: "linear-gradient(180deg,#06b6d4,#155e75)", color: "#fff" },
+    iconStyle: { background: "linear-gradient(180deg,#7936A3,#52236F)", color: "#fff" },
     title: "SEO",
     desc: "Améliorez votre référencement sur Google et attirez du trafic qualifié vers votre site.",
     className: "levitate",
   },
   {
     icon: "💳",
-    iconStyle: { background: "linear-gradient(180deg,#8b5cf6,#4c1d95)", color: "#fff" },
+    iconStyle: { background: "linear-gradient(180deg,#7936A3,#52236F)", color: "#fff" },
     title: "Carte de fidélité numérique",
     desc: "Fidélisez vos clients grâce à une carte numérique pratique, accessible depuis leur smartphone, sans carte papier.",
     className: "levitate-3",
@@ -53,7 +53,7 @@ export default function Services() {
           </span>
           <h2 className="font-black tracking-tight text-white text-[clamp(2.5rem,6vw,5rem)] leading-[1.02]">
             Des solutions{" "}
-            <span className="text-purple" style={{ textShadow: "0 0 40px rgba(167,139,250,.5)" }}>
+            <span className="text-purple" style={{ textShadow: "0 0 40px rgba(121,54,163,.66)" }}>
               complètes
             </span>
           </h2>
@@ -72,7 +72,7 @@ export default function Services() {
               <p className="mt-3 text-slate-300/85 text-sm leading-relaxed">{s.desc}</p>
               <a
                 href="#contact"
-                className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-purple-300 hover:text-white transition-colors"
+                className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-brand-light hover:text-white transition-colors"
               >
                 En savoir plus →
               </a>

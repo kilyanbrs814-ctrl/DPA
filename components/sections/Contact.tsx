@@ -29,7 +29,7 @@ export default function Contact() {
             </span>
             <h2 className="font-black tracking-tight text-white text-[clamp(2.5rem,6vw,5rem)] leading-[1.02]">
               Démarrons votre{" "}
-              <span className="text-purple" style={{ textShadow: "0 0 40px rgba(167,139,250,.5)" }}>
+              <span className="text-purple" style={{ textShadow: "0 0 40px rgba(121,54,163,.66)" }}>
                 projet
               </span>
             </h2>
@@ -74,7 +74,7 @@ export default function Contact() {
             className="glass-strong rounded-2xl p-7 md:p-8 glow-purple"
             onSubmit={handleSubmit}
           >
-            <h3 className="text-2xl font-bold" style={{ color: "#a78bfa" }}>
+            <h3 className="text-2xl font-bold" style={{ color: "#B877DA" }}>
               Envoyez-nous un message
             </h3>
             <p className="text-slate-400 text-sm mt-1">Réponse sous 24h.</p>

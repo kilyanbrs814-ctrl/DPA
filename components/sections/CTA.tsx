@@ -16,7 +16,7 @@ export default function CTA() {
       <div className="max-w-[1000px] mx-auto px-6 relative z-10 text-center">
         <div className="pill-badge mb-9">
           <span>🚀</span>
-          <span style={{ color: "#c4b5fd", fontWeight: 500 }}>Consultation gratuite</span>
+          <span style={{ color: "#B877DA", fontWeight: 500 }}>Consultation gratuite</span>
         </div>
 
         <h2
@@ -27,7 +27,7 @@ export default function CTA() {
           <br />
           <span
             style={{
-              background: "linear-gradient(90deg,#a78bfa,#c084fc,#f472b6)",
+              background: "linear-gradient(90deg,#B877DA,#7936A3,#B877DA)",
               WebkitBackgroundClip: "text",
               backgroundClip: "text",
               color: "transparent",

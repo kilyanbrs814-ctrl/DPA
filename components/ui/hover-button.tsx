@@ -29,10 +29,10 @@ interface HoverButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>
 
 const PALETTES = {
   purple: [
-    { rgb: "124,58,237", alpha: 0.46 },
-    { rgb: "167,139,250", alpha: 0.42 },
-    { rgb: "109,40,217", alpha: 0.44 },
-    { rgb: "196,181,253", alpha: 0.35 },
+    { rgb: "121,54,163", alpha: 0.46 },
+    { rgb: "184,119,218", alpha: 0.42 },
+    { rgb: "82,35,111", alpha: 0.44 },
+    { rgb: "205,158,230", alpha: 0.35 },
   ],
   green: [
     { rgb: "34,197,94", alpha: 0.47 },
@@ -45,16 +45,16 @@ const PALETTES = {
 const SHADOWS = {
   purple: {
     rest: [
-      "inset 0 0 0 1px rgba(196,181,253,0.32)",
-      "inset 0 0 22px rgba(124,58,237,0.14)",
+      "inset 0 0 0 1px rgba(205,158,230,0.42)",
+      "inset 0 0 22px rgba(121,54,163,0.18)",
       "0 6px 24px rgba(0,0,0,0.5)",
-      "0 0 28px rgba(124,58,237,0.23)",
+      "0 0 28px rgba(121,54,163,0.30)",
     ].join(", "),
     hover: [
-      "inset 0 0 0 1px rgba(221,214,254,0.62)",
-      "inset 0 0 30px rgba(124,58,237,0.28)",
+      "inset 0 0 0 1px rgba(226,197,242,0.7)",
+      "inset 0 0 30px rgba(121,54,163,0.3)",
       "0 8px 30px rgba(0,0,0,0.6)",
-      "0 0 45px rgba(139,92,246,0.4)",
+      "0 0 45px rgba(121,54,163,0.53)",
     ].join(", "),
   },
   green: {
@@ -190,7 +190,7 @@ const HoverButton = React.forwardRef<HTMLButtonElement, HoverButtonProps>(
       "rounded-full px-10 py-4 text-base font-semibold tracking-wide text-white",
       "cursor-pointer select-none disabled:cursor-not-allowed disabled:opacity-60",
       "focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[#030308]",
-      isGreen ? "focus-visible:ring-green-300" : "focus-visible:ring-violet-300",
+      isGreen ? "focus-visible:ring-green-300" : "focus-visible:ring-brand-light",
       className ?? ""
     )
 
@@ -200,7 +200,7 @@ const HoverButton = React.forwardRef<HTMLButtonElement, HoverButtonProps>(
       WebkitBackdropFilter: "blur(20px)",
       border: isGreen
         ? "1.5px solid rgba(74,222,128,0.8)"
-        : "1.5px solid rgba(167,139,250,0.8)",
+        : "1.5px solid rgba(184,119,218,0.92)",
       boxShadow: hovered ? shadows.hover : shadows.rest,
       transform: hovered ? "translateY(-2px)" : "translateY(0px)",
       transition: "box-shadow 0.35s ease, transform 0.3s ease, border-color 0.3s ease",
@@ -246,7 +246,7 @@ const HoverButton = React.forwardRef<HTMLButtonElement, HoverButtonProps>(
           style={{
             background: isGreen
               ? "radial-gradient(ellipse 80% 40% at 50% 0%, rgba(134,239,172,0.19) 0%, transparent 70%)"
-              : "radial-gradient(ellipse 80% 40% at 50% 0%, rgba(196,181,253,0.20) 0%, transparent 70%)",
+              : "radial-gradient(ellipse 80% 40% at 50% 0%, rgba(184,119,218,0.24) 0%, transparent 70%)",
           }}
         />
         <span
@@ -254,7 +254,7 @@ const HoverButton = React.forwardRef<HTMLButtonElement, HoverButtonProps>(
           style={{
             textShadow: isGreen
               ? "0 0 18px rgba(74,222,128,0.45)"
-              : "0 0 18px rgba(167,139,250,0.5)",
+              : "0 0 18px rgba(121,54,163,0.7)",
           }}
         >
           {children}

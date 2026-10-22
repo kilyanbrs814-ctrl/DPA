@@ -3,15 +3,21 @@
 @tailwind utilities;
 
 :root {
-  --purple: #7C3AED;
-  --purple-2: #A78BFA;
-  --purple-deep: #5B21B6;
+  /* Violet de l'accent dans le A du logo DPA. */
+  --dpa-purple: #7936A3;
+  --dpa-purple-light: #B877DA;
+  --dpa-purple-deep: #52236F;
+  --dpa-purple-rgb: 121, 54, 163;
+  --dpa-purple-light-rgb: 184, 119, 218;
+  --purple: var(--dpa-purple);
+  --purple-2: var(--dpa-purple);
+  --purple-deep: var(--dpa-purple-deep);
   --bg: #030308;
   --bg-2: #06061a;
   --glass: rgba(15, 12, 32, 0.55);
   --glass-strong: rgba(20, 15, 40, 0.75);
-  --line: rgba(167, 139, 250, 0.18);
-  --line-strong: rgba(167, 139, 250, 0.45);
+  --line: rgba(121,54,163, 0.33);
+  --line-strong: rgba(184,119,218, 0.55);
 }
 
 * {
@@ -54,12 +60,12 @@ main, nav, footer {
 
 .glow-purple {
   box-shadow:
-    0 0 40px rgba(124,58,237,.35),
-    0 0 1px rgba(167,139,250,.7) inset;
+    0 0 40px rgba(121,54,163,.35),
+    0 0 1px rgba(184,119,218,.7) inset;
 }
 
 .text-purple {
-  color: var(--purple-2);
+  color: var(--dpa-purple);
 }
 
 /* Glass */
@@ -88,9 +94,9 @@ main, nav, footer {
   min-height: 46px;
   padding: .625rem 1.25rem;
   border-radius: 9999px;
-  background: rgba(124,58,237,.14);
-  border: 1px solid rgba(167,139,250,.35);
-  color: #ddd6fe;
+  background: rgba(121,54,163,.14);
+  border: 1px solid rgba(184,119,218,.35);
+  color: #E2C5F2;
   font-size: 1rem;
   font-weight: 500;
   white-space: nowrap;
@@ -102,18 +108,18 @@ main, nav, footer {
   gap: .5rem;
   padding: .9rem 1.6rem;
   border-radius: 9999px;
-  background: linear-gradient(180deg, #8b5cf6, #6d28d9);
-  border: 1.5px solid rgba(196,181,253,.92);
+  background: linear-gradient(180deg, #A15CC4 0%, var(--dpa-purple) 55%, #52236F 100%);
+  border: 1.5px solid rgba(205,158,230,.92);
   color: white;
   font-weight: 600;
-  box-shadow: 0 8px 28px rgba(124,58,237,.42), 0 0 0 1px rgba(167,139,250,.16) inset;
+  box-shadow: 0 8px 28px rgba(121,54,163,.42), 0 0 0 1px rgba(184,119,218,.16) inset;
   transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
 }
 
 .pill-cta:hover {
   transform: translateY(-2px);
-  border-color: #ddd6fe;
-  box-shadow: 0 10px 36px rgba(124,58,237,.65), 0 0 0 1px rgba(221,214,254,.3) inset;
+  border-color: #E2C5F2;
+  box-shadow: 0 10px 36px rgba(121,54,163,.65), 0 0 0 1px rgba(226,197,242,.3) inset;
 }
 
 /* Cards */
@@ -122,13 +128,13 @@ main, nav, footer {
   border-radius: 18px;
   padding: 1.6rem;
   background: rgba(20,16,40,.7);
-  border: 1px solid rgba(167,139,250,.18);
+  border: 1px solid rgba(184,119,218,.18);
   transition: 0.3s;
 }
 
 .station-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(167,139,250,.5);
+  border-color: rgba(184,119,218,.5);
 }
 
 /* Icons */
@@ -151,13 +157,13 @@ main, nav, footer {
   display: grid;
   place-items: center;
   font-weight: bold;
-  background: linear-gradient(180deg, #8b5cf6, #6d28d9);
+  background: linear-gradient(180deg, #A15CC4 0%, var(--dpa-purple) 55%, #52236F 100%);
 }
 
 /* FAQ accordion */
 
 .faq-item {
-  border: 1px solid rgba(167, 139, 250, 0.20);
+  border: 1px solid rgba(184,119,218, 0.20);
   border-radius: 20px;
   overflow: hidden;
   background: linear-gradient(145deg, rgba(21, 16, 43, .92), rgba(10, 8, 26, .9));
@@ -166,12 +172,12 @@ main, nav, footer {
 }
 
 .faq-item:hover {
-  border-color: rgba(167, 139, 250, .5);
+  border-color: rgba(184,119,218, .5);
 }
 
 .faq-item.open {
-  border-color: rgba(167, 139, 250, .62);
-  box-shadow: 0 12px 42px rgba(124, 58, 237, .13);
+  border-color: rgba(184,119,218, .62);
+  box-shadow: 0 12px 42px rgba(121,54,163, .13);
 }
 
 .faq-q {
@@ -190,7 +196,7 @@ main, nav, footer {
 }
 
 .faq-q:focus-visible {
-  outline: 2px solid #a78bfa;
+  outline: 2px solid #B877DA;
   outline-offset: -3px;
   border-radius: 18px;
 }
@@ -202,16 +208,16 @@ main, nav, footer {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: rgba(124, 58, 237, .16);
-  border: 1px solid rgba(167, 139, 250, .33);
-  color: #c4b5fd;
+  background: rgba(121,54,163, .16);
+  border: 1px solid rgba(184,119,218, .33);
+  color: #CDA0E3;
   transition: transform .3s ease, background .3s ease, border-color .3s ease;
 }
 
 .faq-item.open .faq-toggle {
   transform: rotate(180deg);
-  background: rgba(124, 58, 237, .32);
-  border-color: rgba(167, 139, 250, .7);
+  background: rgba(121,54,163, .32);
+  border-color: rgba(184,119,218, .7);
 }
 
 .faq-a {
@@ -234,7 +240,7 @@ main, nav, footer {
 .faq-a-inner p {
   margin: 0 1.5rem;
   padding: 1rem 0 1.5rem;
-  border-top: 1px solid rgba(167, 139, 250, .15);
+  border-top: 1px solid rgba(184,119,218, .15);
   color: #cbd5e1;
   line-height: 1.8;
   font-size: .96rem;
@@ -257,7 +263,7 @@ main, nav, footer {
   padding: .75rem 1rem;
   border-radius: 10px;
   background: rgba(8,6,20,.6);
-  border: 1px solid rgba(167,139,250,.22);
+  border: 1px solid rgba(184,119,218,.22);
   color: #fff;
 }
 
@@ -280,14 +286,14 @@ main, nav, footer {
   height: 72px;
   z-index: 50;
   background: rgba(3, 3, 8, 0.88);
-  border-bottom: 1px solid rgba(167, 139, 250, 0.10);
+  border-bottom: 1px solid rgba(184,119,218, 0.10);
   -webkit-backdrop-filter: blur(16px);
   backdrop-filter: blur(16px);
 }
 
 .navbar.scrolled {
   background: rgba(3, 3, 8, 0.96);
-  border-bottom-color: rgba(167, 139, 250, 0.18);
+  border-bottom-color: rgba(184,119,218, 0.18);
 }
 
 .nav-link {
@@ -297,7 +303,7 @@ main, nav, footer {
 
 .nav-link:hover,
 .nav-link:focus-visible {
-  color: #c4b5fd;
+  color: #CDA0E3;
 }
 
 .mobile-nav {

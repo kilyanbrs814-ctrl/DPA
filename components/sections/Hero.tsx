@@ -9,11 +9,11 @@ export default function Hero() {
           <span
             className="block pb-[0.12em]"
             style={{
-              background: "linear-gradient(180deg,#c4b5fd,#7c3aed)",
+              background: "linear-gradient(180deg,#B877DA,#7936A3)",
               WebkitBackgroundClip: "text",
               backgroundClip: "text",
               color: "transparent",
-              textShadow: "0 0 60px rgba(124,58,237,.45)",
+              textShadow: "0 0 60px rgba(121,54,163,.58)",
             }}
           >
             Project Agency

@@ -166,7 +166,7 @@ export default function SpaceBg() {
       for (const p of particles) {
         p.y -= p.v
         if (p.y < -10) { p.y = H + 10; p.x = Math.random() * W }
-        sctx.fillStyle = `rgba(167,139,250,${p.a * (1 - warpT * 0.5)})`
+        sctx.fillStyle = `rgba(121,54,163,${p.a * (1 - warpT * 0.5)})`
         sctx.beginPath()
         sctx.arc(p.x, p.y, p.r, 0, Math.PI * 2)
         sctx.fill()
